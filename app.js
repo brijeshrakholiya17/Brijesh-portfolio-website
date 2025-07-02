@@ -32,8 +32,6 @@ function toggleMenu() {
     }
   }
 
-
-
 document.addEventListener("DOMContentLoaded", function() {
   var currentIndex = 0;
   var slides = document.querySelectorAll(".slide");
@@ -58,10 +56,3 @@ document.addEventListener("DOMContentLoaded", function() {
     showSlide(currentIndex);
   });
 });
-
-
-
-  
-
-
-  
