@@ -4,6 +4,7 @@ html{
 }
 
 body {
+    width: 100vw;
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
@@ -12,11 +13,6 @@ body {
     color: #383873;
 }
 
-html, body {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
 body > .page1,
 body > .page2,
 body > .page3 {
@@ -31,6 +27,7 @@ body > .page3 {
 
 body {
   overflow-x: hidden;
+  position: relative;
 }
 
 
@@ -41,15 +38,19 @@ footer {
 
 /* HEADER STYLING */
 header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
     padding: 0 8vw;
-    height: 180px;
+    height: 60px !important;
     border-bottom: 0.5px solid #20C3C5;
     background-color: white;
 }
+
 
 header h1 {
     color: #383873;
@@ -114,7 +115,10 @@ header nav a:hover{
 /* PAGE 1 STYLING */
 .page1{
     width: 100vw;
-    overflow: hidden;
+    background: linear-gradient(to top, #232347, #383873);
+    color: white;
+    align-content: center;
+    border-bottom: 1px solid white;
 }
 
 .content1{
@@ -136,9 +140,8 @@ header nav a:hover{
 }
 .left .checkout{
     margin-top: 70px;
-    width: 200px;
+    width: 280px !important;
     display: flex;
-    flex-wrap: wrap;
     gap: 1vw;
     align-items: baseline;
 }
@@ -150,8 +153,8 @@ header nav a:hover{
 .left .checkout i{
     cursor: pointer;
     font-size: 17px;
-    color: #383873;
-    background-color: #dadada95;
+    color: white;
+    border: 1px solid white;
     padding: 3px;
     border-radius: 5px;
     transition-duration: 0.25s;
@@ -188,7 +191,7 @@ header nav a:hover{
     font-weight: 500;
     color: #ffffff;
     border: 1px solid white;
-    background-color: #20C3C5;
+    background-color: #EE7C53;
     border-radius: 5px;
     padding: 0.50vw 0.95vw;
     transition-duration: 0.5s;
@@ -203,27 +206,37 @@ header nav a:hover{
     border-radius: 5px;
     padding: 0.50vw 0.95vw;
 }
+
+.left h1 span {
+  color: #EE7C53; /* Accent orange */
+}
+
 .right{
     position: relative;
     width: 50%;
     text-align: center;
 }
 .right img{
-    height: 40vw;
-    padding: 4vw 0;
+    position: relative;
+    height: 30vw;
+    top: 50px !important;
+    border-bottom: 5px solid white;
+    border-radius: 0 0 50px 50px;
 }
 
 /* PAGE 2 STYLING */
 .page2{
     height: auto;
     width: auto;
-    background-color: #9dedee;
     display: flex;
     margin: auto;
     padding: 10vh 8vw;
+    padding-bottom: 20vh;
     gap: 3vw;
-    background-image: linear-gradient(135deg, #20C3C5, white);
-    border-bottom: 1px solid black;
+    background-color: #232347;
+    /* background: linear-gradient(135deg, #20C3C5, #ffffff); */
+    color: white;
+    border-bottom: 1px solid white;
 }
 
 .page2 .section1{
@@ -238,7 +251,6 @@ header nav a:hover{
 .page2 .section2{
     display: flex;
     flex-direction: column;
-    /* justify-content: space-between; */
     gap: 5vh;
     border-left: 0.5px solid black;
     padding-left: 2vh;
@@ -255,10 +267,10 @@ header nav a:hover{
 
 .subsection div h4{
     width: 9.5vw;
-    color: #383873;
+    color: white;
     font-size: 1.5vw;
     font-weight: 700;
-    border: 1px solid #383873;
+    border: 1px solid white;
     border-radius: 5px;
     padding: 0.50vw 1.75vw;
     transition-duration: 0.5s;
@@ -278,10 +290,16 @@ header nav a:hover{
 /* PAGE 3 STYLING */
 .page3{
     padding: 5vh;
-    height: 100vh;
+    height: auto;
     align-items: center;
     text-align: center;
-    background-image: linear-gradient(-deg, #20C3C5, white);
+    background: linear-gradient(to bottom, #232347, #383873);
+    color: white;
+    padding-top: 10vh !important;
+}
+
+.carousel-slide{
+    margin-top: 50vh !important;
 }
 
 .carousel-item{
@@ -310,24 +328,31 @@ header nav a:hover{
     opacity: 1;
 }
 .carousel-caption{
-    color: black !important;
+    color: white !important;
     align-content: center;
     height: 24vh;
-
 }
 
 .carousel-caption h5{
-    color: #383873 !important;
+    color: white !important;
 }
+
+.carousel-caption a{
+    color: white !important;
+    font-weight: 500;
+}
+
 .carousel-caption p{
     font-weight: 400;
 }
 
 .carousel-indicators{
+    position: relative;
     background-color: rgba(0, 0, 0, 0.5);
     width: 150px;
     border-radius: 20px;
     margin: auto;
+    margin-bottom: 2vh !important;
 }
 
 /* STYLING FOR MOBILE DEVICE */
@@ -386,7 +411,7 @@ header nav a:hover{
         font-weight: 500;
         color: #ffffff;
         border: 1px solid white;
-        background-color: #20C3C5;
+        background-color: #EE7C53;
         border-radius: 5px;
         padding: 0.50vw 0.95vw;
         transition-duration: 0.5s;
@@ -404,6 +429,7 @@ header nav a:hover{
     .left .checkout{
         margin-top: 20px;
         width: 250px;
+        flex-direction: wrap;
     }
 
     .right{
@@ -413,11 +439,10 @@ header nav a:hover{
         text-align: center;
     }
     .right img{
-        padding: 0;
         height: 100%;
-    }
-    .right img:hover{
-        height: 100%;
+        position: relative;
+        top: 0 !important;
+        border-bottom: 5px solid white;
     }
 
     .page2{
@@ -467,7 +492,7 @@ header nav a:hover{
         right: -250px;
         width: 125px;
         height: 138px;
-        background-color: #6feff1;
+        background-color: #f7865a;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         border-radius: 15px 0 0 15px;
         transition: right 0.3s ease-in-out;
@@ -483,7 +508,7 @@ header nav a:hover{
         border-bottom: 1px solid #616060;
         display: block;
         text-decoration: none;
-        color: #2b2b59;
+        color: white;
         font-size: 18px;
         font-weight: 400;
     }
@@ -498,7 +523,7 @@ header nav a:hover{
     .menu a:hover {
         font-weight: 400;
         color: #ffffff;
-        background-color: #50afb1 ;
+        background-color: #c26a47 ;
     }
 
     .card{
@@ -516,19 +541,18 @@ header nav a:hover{
     }
 
     .page3{
-        height: 80vw !important;
+        height: auto !important;
     }
 
     .carousel-item {
         width: 100%;
-        height: 100%;
+        height: 100% !important;
         align-items: center;
-
     }
 
     .carousel-item img{
         width: 95% !important;
-        height: auto;
+        height: auto !important;
         border: 1px solid black;
         border-radius: 10px;
     }
@@ -543,13 +567,17 @@ header nav a:hover{
         position: relative;
         left: 0;
         bottom: 0;
-        display: none;
     }
 
     .carousel-indicators{
-        display: none;
+       width: 25% !important;
+       padding: 0 5px 0 5px !important;
     }
       
+    .section1{
+        animation-name: slideRight;
+        animation-timeline: view();
+    }
 }
 
 /* STYLING FOR TABLET DEVICE */
@@ -683,6 +711,10 @@ header nav a:hover{
         display: none;
     }
 
+    .page1{
+        height: 80vh;
+    }
+
     .menu{
         display: none;
     }
@@ -699,13 +731,15 @@ header nav a:hover{
     }
 }
 
+/* FOOTER */
 footer {
-  background: linear-gradient(135deg, #232347, #383873);
+  /* background: linear-gradient(135deg, #232347, #383873); */
+  background-color: #272750;
   color: #fff;
-  padding: 50px 20px 10px;
+  padding: 50px 20px 10px !important;
   font-family: 'Poppins', sans-serif;
-  /* position: relative; */
   width: 100%;
+  border-top: 2px solid white;
 }
 
 .main-content {
@@ -796,6 +830,18 @@ footer .content .text {
   border-top: 1px solid #444;
 }
 
+@media (min-width:768px) and (max-width:1023px){
+    footer{
+        padding: 50px 50px 10px !important;
+        height: 20vh !important;
+    }
+
+    .main-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
+
 @media screen and (max-width: 768px) {
   .main-content {
     flex-direction: column;
@@ -825,10 +871,40 @@ footer .content .text {
         opacity: 1;
         scale: 1;
     }
+}
 
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(-25px);
+    opacity: 1;
+  }
+}
+
+@keyframes slideRight {
+  from {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .subsection{
     animation: appear linear;
     animation-timeline : view();
+    animation-range: entry 0% cover 30%;
 }
+
+.page3 h1{
+    animation-name: slideUp;
+    animation-timing-function: ease-out;
+    animation-timeline: view();
+}
+
+
