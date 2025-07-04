@@ -118,7 +118,6 @@ header nav a:hover{
     background: linear-gradient(to top, #232347, #383873);
     color: white;
     align-content: center;
-    border-bottom: 1px solid white;
 }
 
 .content1{
@@ -176,7 +175,7 @@ header nav a:hover{
 .left h3 span{
     color: #FF6224;
     margin-top: -3vw;
-    font-size: 2vw;
+    font-size: 2.5vw;
 }
 .left p{
     line-height: 110%;
@@ -185,9 +184,10 @@ header nav a:hover{
     font-weight: 500;
 }
 
-.left button{
+.left a{
+    text-decoration: none;
     margin-top: 3px;
-    font-size: 12px;
+    font-size: 16px;
     font-weight: 500;
     color: #ffffff;
     border: 1px solid white;
@@ -197,8 +197,8 @@ header nav a:hover{
     transition-duration: 0.5s;
     transition-timing-function: ease;
 }
-.left button:hover{
-    font-size: 12px;
+.left a:hover{
+    font-size: 16px;
     font-weight: 500;
     color: #383873;
     border: 1px solid #383873;
@@ -220,8 +220,8 @@ header nav a:hover{
     position: relative;
     height: 30vw;
     top: 50px !important;
-    border-bottom: 5px solid white;
-    border-radius: 0 0 50px 50px;
+    border-bottom: 1px solid white !important;
+    border-radius: 0 0 50px 40px;
 }
 
 /* PAGE 2 STYLING */
@@ -252,7 +252,7 @@ header nav a:hover{
     display: flex;
     flex-direction: column;
     gap: 5vh;
-    border-left: 0.5px solid black;
+    border-left: 0.5px solid white;
     padding-left: 2vh;
 }
 
@@ -356,7 +356,7 @@ header nav a:hover{
 }
 
 /* STYLING FOR MOBILE DEVICE */
-@media (max-width:767px) {
+@media (max-width:768px) {
     header h1{
         font-size: 1.25rem;
     }
@@ -374,7 +374,7 @@ header nav a:hover{
     .content1{
         flex-direction: column;
         height: 100%;
-        justify-content: space-between;
+        justify-content: space-around;
     }
 
     .left{
@@ -405,7 +405,7 @@ header nav a:hover{
         font-size: 15px;
         font-weight: 500;
     }
-    .left button{
+    .left a{
         margin-top: 3px;
         font-size: 16px;
         font-weight: 500;
@@ -417,7 +417,7 @@ header nav a:hover{
         transition-duration: 0.5s;
         transition-timing-function: ease;
     }
-    .left button:hover{
+    .left a:hover{
         font-size: 16px;
         font-weight: 500;
         color: #383873;
@@ -449,6 +449,7 @@ header nav a:hover{
         flex-direction: column;
         height: auto;
         padding: 7vh 8vw;
+        padding-top: 15vh !important;
         justify-content: space-between;
     }
 
@@ -581,7 +582,7 @@ header nav a:hover{
 }
 
 /* STYLING FOR TABLET DEVICE */
-@media (min-width:768px) and (max-width:1023px){
+@media (min-width:768px) and (max-width:1024px){
     .menu_icon{
         display: none;
     }
@@ -634,11 +635,13 @@ header nav a:hover{
     .page1{
         height: 55vw;
         overflow: hidden;
+        border-bottom: 1px solid white;
     }
 
     .content1{
         flex-direction: row;
         justify-items: center;
+        
     }
 
     .left {
@@ -712,7 +715,8 @@ header nav a:hover{
     }
 
     .page1{
-        height: 80vh;
+        height: 90vh;
+        border-bottom: 1px solid white;
     }
 
     .menu{
@@ -890,7 +894,7 @@ footer .content .text {
     opacity: 0;
   }
   to {
-    transform: translateX(0);
+    transform: translateX(10px);
     opacity: 1;
   }
 }
