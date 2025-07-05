@@ -11,6 +11,7 @@ body {
     font-weight: 100;
     font-style: normal;
     color: #383873;
+    background-color: #232347;
 }
 
 body > .page1,
@@ -33,6 +34,11 @@ body {
 
 footer {
   flex-shrink: 0;
+}
+
+.separation{
+    height: 1px;
+    background-color: white;
 }
 
 
@@ -224,6 +230,65 @@ header nav a:hover{
     border-radius: 0 0 50px 40px;
 }
 
+/* About Section Styling */
+.aboutPage{
+    width: 100%;
+    height: 95vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 5vh 8vw;
+    background-color: #232347;
+    color: white;
+    border-bottom: 1px solid white;
+}
+.aboutPage h1{
+    font-size: 2.5vw;
+    font-weight: 700;
+    margin-bottom: 1vw;
+}
+.aboutPage h3{
+    font-size: 2vw;
+    font-weight: 600;
+    margin-bottom: 1vw;
+}
+.aboutPage h3 span{
+    color: #FF6224;
+    font-size: 2vw;
+}
+.aboutPage p{
+    font-size: 1.25vw;
+    font-weight: 200;
+    width: 90%;
+    line-height: 150%;
+    text-align: justify;
+    margin-bottom: 2vw;
+}
+.aboutPage a{
+    text-decoration: none;
+    font-size: 1.25vw;
+    font-weight: 500;
+    color: #ffffff;
+    border: 1px solid white;
+    background-color: #EE7C53;
+    border-radius: 5px;
+    padding: 0.50vw 0.95vw;
+    transition-duration: 0.5s;
+    transition-timing-function: ease;
+}
+.aboutPage a:hover{
+    font-size: 1.25vw;
+    font-weight: 500;
+    color: #383873;
+    border: 1px solid #383873;
+    background-color: white;
+    border-radius: 5px;
+    padding: 0.50vw 0.95vw;
+}
+
+
+
 /* PAGE 2 STYLING */
 .page2{
     height: auto;
@@ -236,7 +301,7 @@ header nav a:hover{
     background-color: #232347;
     /* background: linear-gradient(135deg, #20C3C5, #ffffff); */
     color: white;
-    border-bottom: 1px solid white;
+    /* border-bottom: 1px solid white; */
 }
 
 .page2 .section1{
@@ -267,10 +332,10 @@ header nav a:hover{
 
 .subsection div h4{
     width: 9.5vw;
-    color: white;
+    color: #f7865a;
     font-size: 1.5vw;
     font-weight: 700;
-    border: 1px solid white;
+    border: 1px solid #f7865a;
     border-radius: 5px;
     padding: 0.50vw 1.75vw;
     transition-duration: 0.5s;
@@ -338,7 +403,7 @@ header nav a:hover{
 }
 
 .carousel-caption a{
-    color: white !important;
+    color: #f7865a !important;
     font-weight: 500;
 }
 
@@ -445,6 +510,68 @@ header nav a:hover{
         border-bottom: 5px solid white;
     }
 
+    .aboutPage{
+        margin-top: 10vh;
+        height: auto;
+        padding: 7vh 8vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        border-top: 1px solid white;
+    }
+    .aboutPage h1{
+        font-size: 2.25em;
+        font-weight: 700;
+        margin-bottom: 1vw;
+        animation-name: slideUp;
+    animation-timing-function: ease-out;
+    animation-timeline: view();
+    }
+    .aboutPage h3{
+        font-size: 1.15em;
+        font-weight: 600;
+        margin-bottom: 1vw;
+        animation-name: slideUp;
+    animation-timing-function: ease-out;
+    animation-timeline: view();
+    }
+    .aboutPage h3 span{
+        color: #FF6224;
+        font-size: 1.15em;
+    }
+    .aboutPage p{
+        font-size: 1em;
+        font-weight: 200;
+        width: 90%;
+        line-height: 150%;
+        text-align: justify;
+        margin-bottom: 2vw;
+        animation-name: slideUp;
+    animation-timing-function: ease-out;
+    animation-timeline: view();
+    }
+    .aboutPage a{
+        text-decoration: none;
+        font-size: 1.25em;
+        font-weight: 500;
+        color: #ffffff;
+        border: 1px solid white;
+        background-color: #EE7C53;
+        border-radius: 5px;
+        padding: 0.50vw 0.95vw;
+        transition-duration: 0.5s;
+        transition-timing-function: ease;
+    }
+    .aboutPage a:hover{
+        font-size: 1.25em;
+        font-weight: 500;
+        color: #383873;
+        border: 1px solid #383873;
+        background-color: white;
+        border-radius: 5px;
+        padding: 0.50vw 0.95vw;
+    }
+
     .page2{
         flex-direction: column;
         height: auto;
@@ -492,7 +619,7 @@ header nav a:hover{
         top: 70px;
         right: -250px;
         width: 125px;
-        height: 138px;
+        height: 113px;
         background-color: #f7865a;
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
         border-radius: 15px 0 0 15px;
@@ -685,6 +812,14 @@ header nav a:hover{
     }
     .subsection div h4:hover{
         font-size: 2vw;
+    }
+
+    .aboutPage{
+        height: 100vh;
+        padding: 7vh 8vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .page3{
