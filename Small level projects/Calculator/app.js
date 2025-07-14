@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function () {
     const display = document.querySelector('.display');
     const buttons = document.querySelectorAll('button');
@@ -9,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const clickedValue = button.textContent;
 
             if (currentValue === 'Error') {
-                display.value = ''; // Clear the display if it shows an error
+                display.value = '';
             }
 
             if (button.classList.contains('clear')) {
@@ -39,11 +38,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     display.value = 'Error';
                 }
             } else {
-                if (!isNaN(currentValue) || currentValue === '') { // Check if the current value is a number or empty
-                    display.value += clickedValue;
-                } else { // If current value is an operator, replace it with the clicked number
-                    display.value = clickedValue;
-                }
+                display.value += clickedValue; // Simply append clicked value
             }
         });
     });

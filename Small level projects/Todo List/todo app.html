@@ -3,16 +3,172 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Todo</title>
+    <title>Ultimate Todo List App</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #121212;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background: #1e1e1e;
+            padding: 30px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+        }
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #00ffab;
+        }
+        .input-section {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .input-section input[type="text"] {
+            flex: 1;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+        }
+        .input-section input[type="time"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+        }
+        .input-section button {
+            padding: 10px 20px;
+            background-color: #00ffab;
+            color: #000;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        ul {
+            list-style: none;
+        }
+        li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #2e2e2e;
+            margin-bottom: 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        li.completed {
+            text-decoration: line-through;
+            opacity: 0.6;
+        }
+        .task-controls button {
+            margin-left: 5px;
+            background-color: #444;
+            color: #fff;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        .alarm {
+            color: #ff5e5e;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
 <body>
-    <h1>TODO LIST</h1>
-    <input placeholder="enter your task">
-    <button>Add Task</button>
-    <ul>
-        <li>Eat <button class="delete">Delete</button></li>
-        <li>Sleep <button class="delete">Delete</button></li>
-    </ul>
-    <script src="todo app.js"></script>
+    <div class="container">
+        <h1>📝 Ultimate Todo List</h1>
+        <div class="input-section">
+            <input type="text" id="taskInput" placeholder="Enter your task">
+            <input type="time" id="alarmTime">
+            <button onclick="addTask()">Add</button>
+        </div>
+        <ul id="taskList"></ul>
+    </div>
+
+    <audio id="alarmSound" src="https://www.soundjay.com/buttons/sounds/beep-07.mp3" preload="auto"></audio>
+
+    <script>
+        function addTask() {
+            const taskInput = document.getElementById("taskInput");
+            const alarmInput = document.getElementById("alarmTime");
+            const taskList = document.getElementById("taskList");
+            const taskText = taskInput.value.trim();
+            const alarmTime = alarmInput.value;
+
+            if (!taskText) return alert("Please enter a task!");
+
+            const li = document.createElement("li");
+
+            const label = document.createElement("label");
+            const checkbox = document.createElement("input");
+            checkbox.type = "checkbox";
+            checkbox.onchange = function () {
+                li.classList.toggle("completed", this.checked);
+            };
+
+            label.appendChild(checkbox);
+            label.appendChild(document.createTextNode(" " + taskText));
+
+            const controls = document.createElement("div");
+            controls.className = "task-controls";
+
+            if (alarmTime) {
+                const alarmSpan = document.createElement("span");
+                alarmSpan.className = "alarm";
+                alarmSpan.innerText = `⏰ ${alarmTime}`;
+                controls.appendChild(alarmSpan);
+                scheduleAlarm(taskText, alarmTime);
+            }
+
+            const deleteBtn = document.createElement("button");
+            deleteBtn.innerText = "Delete";
+            deleteBtn.onclick = function () {
+                li.remove();
+            };
+
+            controls.appendChild(deleteBtn);
+
+            li.appendChild(label);
+            li.appendChild(controls);
+            taskList.appendChild(li);
+
+            taskInput.value = "";
+            alarmInput.value = "";
+        }
+
+        function scheduleAlarm(taskText, time) {
+            const now = new Date();
+            const [hours, minutes] = time.split(":").map(Number);
+            const alarmDate = new Date();
+            alarmDate.setHours(hours);
+            alarmDate.setMinutes(minutes);
+            alarmDate.setSeconds(0);
+
+            if (alarmDate < now) alarmDate.setDate(alarmDate.getDate() + 1);
+
+            const timeout = alarmDate - now;
+            setTimeout(() => {
+                document.getElementById("alarmSound").play();
+                alert(`🔔 Alarm for task: ${taskText}`);
+            }, timeout);
+        }
+    </script>
 </body>
 </html>
