@@ -165,6 +165,7 @@
         /* Main Content */
         .main-content {
             padding: 80px 0;
+            background-color: #1d1d3e2d;
         }
 
         .projects-grid {
@@ -463,8 +464,8 @@
 
         .home-icn{
             z-index: 10;
-            position: absolute;
-            background-color: rgba(255, 255, 255, 0.185) !important;
+            position: fixed;
+            background-color: #FC9365 !important;
             color: white !important;
             border-radius: 50%;
             font-size: 20px;
@@ -473,9 +474,26 @@
             left: 3%;
             cursor: pointer;
             transition: 0.25s ease;
+
         }
         .home-icn:hover{
             transform: scale(1.15);
+        }
+
+        .home-text{
+            position: fixed;
+            top: 4%;
+            left: 6.1%;
+            text-decoration: none;
+            color: white;
+        }
+
+        .home-text2{
+            position: absolute;
+            top: 30%;
+            left: 6.1%;
+            text-decoration: none;
+            color: black;
         }
 
         /* Animations */
@@ -575,12 +593,17 @@
         <i class="fa-solid fa-chevron-down fa-bounce arrow-icn"></i>
         <a href="index.html">
             <i class="fa-solid fa-house home-icn"></i>
+            <h2 class="home-text">Home</h2>
         </a>
         
     </section>
 
     <!-- Filter Navigation -->
     <nav class="filter-nav">
+        <a href="index.html">
+            <i class="fa-solid fa-house home-icn"></i>
+            <h2 class="home-text2">Home</h2>
+        </a>
         <div class="container">
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
