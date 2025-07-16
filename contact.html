@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/all.css">
+    <link rel="stylesheet" href="style.css">
     <title>Contact - Portfolio</title>
     <style>
         * {
@@ -675,6 +676,28 @@
 </head>
 <body>
     <!-- Hero Section -->
+    <div class="menu" style="right: -250px;">
+        <ul>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </ul>
+    </div>
+
+     <header class="sticky-top">
+        <h1>My Portfolio</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        
+        <button class="sign">Lets go</button>
+        <div class="menu_icon"  onclick="toggleMenu()"><i class="fa-solid fa-bars" ></i></div>
+    </header>
+
     <section class="hero-section">
         <div class="floating-elements">
             <div class="floating-shape"></div>
@@ -686,9 +709,6 @@
             <p class="hero-subtitle">Ready to bring your ideas to life? I'd love to hear from you.</p>
         </div>
         <i class="fa-solid fa-chevron-down fa-bounce arrow-icn"></i>
-        <a href="index.html">
-            <i class="fa-solid fa-house home-icn"></i>
-        </a>
     </section>
 
     <!-- Main Content -->
@@ -898,5 +918,6 @@
             });
         });
     </script>
+    <script src="app.js"></script>
 </body>
 </html>

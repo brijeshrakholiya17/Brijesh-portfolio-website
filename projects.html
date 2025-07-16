@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="css/all.css">
     <title>Projects - Portfolio</title>
     <style>
@@ -25,6 +26,13 @@
             max-width: 1400px;
             margin: 0 auto;
             padding: 0 20px;
+        }
+
+        header{
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 10;
         }
 
         /* Header Section */
@@ -462,40 +470,6 @@
             bottom: 0;
         }
 
-        .home-icn{
-            z-index: 10;
-            position: fixed;
-            background-color: #FC9365 !important;
-            color: white !important;
-            border-radius: 50%;
-            font-size: 20px;
-            padding: 10px;
-            top: 4%;
-            left: 3%;
-            cursor: pointer;
-            transition: 0.25s ease;
-
-        }
-        .home-icn:hover{
-            transform: scale(1.15);
-        }
-
-        .home-text{
-            position: fixed;
-            top: 4%;
-            left: 6.1%;
-            text-decoration: none;
-            color: white;
-        }
-
-        .home-text2{
-            position: absolute;
-            top: 30%;
-            left: 6.1%;
-            text-decoration: none;
-            color: black;
-        }
-
         /* Animations */
         @keyframes fadeInUp {
             from {
@@ -520,6 +494,7 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+
             .projects-grid {
                 grid-template-columns: 1fr;
                 gap: 30px;
@@ -580,7 +555,30 @@
 </head>
 <body>
     <!-- Hero Section -->
+    <div class="menu" style="right: -250px;">
+        <ul>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </ul>
+    </div>
+
+    <header class="sticky-top">
+        <h1>My Portfolio</h1>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Projects</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+        
+        <button class="sign">Lets go</button>
+        <div class="menu_icon"  onclick="toggleMenu()"><i class="fa-solid fa-bars" ></i></div>
+    </header>
+
     <section class="hero-section">
+        
         <div class="floating-elements">
             <div class="floating-shape"></div>
             <div class="floating-shape"></div>
@@ -591,19 +589,11 @@
             <p class="hero-subtitle">Crafting Digital Experiences That Matter</p>
         </div>
         <i class="fa-solid fa-chevron-down fa-bounce arrow-icn"></i>
-        <a href="index.html">
-            <i class="fa-solid fa-house home-icn"></i>
-            <h2 class="home-text">Home</h2>
-        </a>
         
     </section>
 
     <!-- Filter Navigation -->
     <nav class="filter-nav">
-        <a href="index.html">
-            <i class="fa-solid fa-house home-icn"></i>
-            <h2 class="home-text2">Home</h2>
-        </a>
         <div class="container">
             <div class="filter-buttons">
                 <button class="filter-btn active" data-filter="all">All Projects</button>
@@ -815,6 +805,8 @@
             
         </div>
     </main>
+
+    <script src="app.js"></script>
 
     <script>
         // Filter functionality
